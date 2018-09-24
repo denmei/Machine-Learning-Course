@@ -98,13 +98,12 @@ while ~isempty(email_contents)
     %
 
 
-
-
-
-
-
-
-
+    for w=1:length(vocabList)
+      if (strcmp(vocabList(w, 1), str) == 1)
+        word_indices = [word_indices, w];
+        break;
+      end
+    end
 
     % =============================================================
 
