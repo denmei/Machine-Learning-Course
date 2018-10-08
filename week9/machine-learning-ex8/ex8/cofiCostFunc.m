@@ -47,11 +47,13 @@ Y_withrating = Y .* R;
 
 J = (1/2) .* sum(sum((X_Theta_withrating - Y_withrating).^2));
 
+X_grad = (X_Theta_withrating - Y_withrating) * Theta;
+Theta_grad = (X_Theta_withrating - Y_withrating)' * X;
 
-
-
-
-
+% adding regularization:
+J = J + (lambda/2) * sum(sum(Theta.^2)) + (lambda/2) * sum(sum(X.^2));
+X_grad = X_grad + lambda * X;
+Theta_grad = Theta_grad + lambda * Theta;
 
 
 
