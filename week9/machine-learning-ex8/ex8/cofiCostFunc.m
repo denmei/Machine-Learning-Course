@@ -41,11 +41,11 @@ Theta_grad = zeros(size(Theta));
 %
 
 
+X_Theta_withrating = (X*Theta') .* R;
+Y_withrating = Y .* R;
 
 
-
-
-
+J = (1/2) .* sum(sum((X_Theta_withrating - Y_withrating).^2));
 
 
 
